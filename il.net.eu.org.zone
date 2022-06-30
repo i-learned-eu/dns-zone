@@ -1,5 +1,5 @@
 $ORIGIN il.net.eu.org.
-$TTL    1800
+$TTL    3600
 
 ; SOA
 @  IN	SOA	ns1.eban.eu.org. contact.ilearned.eu. 1 21600 3600 604800 86400
