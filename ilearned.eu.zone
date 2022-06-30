@@ -28,7 +28,7 @@ _443._udp   IN  TLSA    3 1 1 405FD3AC07DC7D4C0789BBC2EA6BA75A001AF8F35AA52D97F3
 @   IN  A   89.234.156.60
 @   IN  AAAA    2a03:7220:8083:3c00::1
 analytics	IN	CNAME	web01.il.net.eu.org.
-blog.	IN	CNAME	web01.il.net.eu.org.
+blog	IN	CNAME	web01.il.net.eu.org.
 cdn IN	CNAME	web01.il.net.eu.org.
 commento	IN	CNAME	web01.il.net.eu.org.
 discord	IN	CNAME	web01.il.net.eu.org.
@@ -39,8 +39,8 @@ status	IN	CNAME	web02.il.net.eu.org.
 bot.asso	IN	CNAME	web03.il.net.eu.org.
 editor.bot.asso	IN	CNAME	web03.il.net.eu.org.
 db.asso	IN	CNAME	web03.il.net.eu.org.
-pass.	IN	CNAME	web03.il.net.eu.org.
-wiki.	IN	CNAME	web03.il.net.eu.org.
+pass	IN	CNAME	web03.il.net.eu.org.
+wiki	IN	CNAME	web03.il.net.eu.org.
 
 ; Git
 git	IN	CNAME	web03.il.net.eu.org.
