@@ -18,4 +18,4 @@ prod-deploy-job:
         - rsync -az --delete -e "ssh -i ~/.ssh/id_ed25519" *.zone deploy@vm01.eban.eu.org:/var/lib/knot
         - ssh -i ~/.ssh/id_ed25519 deploy@vm01.eban.eu.org sudo /bin/systemctl restart knot
     rules:
-        - if: $CI_COMMIT_BRANCH == "master"
+        - if: $CI_COMMIT_BRANCH == "main"
