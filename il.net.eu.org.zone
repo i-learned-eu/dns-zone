@@ -16,7 +16,7 @@ txt.web02	IN	TXT	"Owner: Eban"
 web03	IN	CNAME	web.ramle.be.
 txt.web03	IN	TXT	"Owner: Elmar"
 web04   IN  CNAME   leaf.cant.at.
-txt.web04   IN  CNAME   "Owner: Tag"
+txt.web04   IN  TXT   "Owner: Tag"
 
 ; Labs
 labs01	IN	A	129.151.246.78
