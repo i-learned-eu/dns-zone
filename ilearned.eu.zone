@@ -27,26 +27,26 @@ _443._udp   IN  TLSA    3 1 1 405FD3AC07DC7D4C0789BBC2EA6BA75A001AF8F35AA52D97F3
 ; Other resources
 @   IN  A   89.234.156.60
 @   IN  AAAA    2a03:7220:8083:3c00::1
-analytics	IN	CNAME	ilearned.eu.
-blog.	IN	CNAME	ilearned.eu.
-cdn IN	CNAME	ilearned.eu.
-commento	IN	CNAME	ilearned.eu.
-discord	IN	CNAME	ilearned.eu.
-en	IN	CNAME	ilearned.eu.
-status	IN	CNAME	vm02.eban.eu.org.
+analytics	IN	CNAME	web01.il.net.eu.org.
+blog.	IN	CNAME	web01.il.net.eu.org.
+cdn IN	CNAME	web01.il.net.eu.org.
+commento	IN	CNAME	web01.il.net.eu.org.
+discord	IN	CNAME	web01.il.net.eu.org.
+en	IN	CNAME	web01.il.net.eu.org.
+status	IN	CNAME	web02.il.net.eu.org.
 
 ; Association
-bot.asso	IN	CNAME	web.ramle.be.
-editor.bot.asso	IN	CNAME	web.ramle.be.
-db.asso	IN	CNAME	web.ramle.be.
-pass.	IN	CNAME	web.ramle.be.
-wiki.	IN	CNAME	web.ramle.be.
+bot.asso	IN	CNAME	web03.il.net.eu.org.
+editor.bot.asso	IN	CNAME	web03.il.net.eu.org.
+db.asso	IN	CNAME	web03.il.net.eu.org.
+pass.	IN	CNAME	web03.il.net.eu.org.
+wiki.	IN	CNAME	web03.il.net.eu.org.
 
 ; Git
-git	IN	CNAME	web.ramle.be.
-gitea	IN	CNAME	web.ramle.be.
-gitlab	IN	CNAME	web.ramle.be.
-hub	IN	CNAME	web.ramle.be.
-auth.hub	IN	CNAME	web.ramle.be.
-*.pages	IN	CNAME	web.ramle.be.
+git	IN	CNAME	web03.il.net.eu.org.
+gitea	IN	CNAME	web03.il.net.eu.org.
+gitlab	IN	CNAME	web03.il.net.eu.org.
+hub	IN	CNAME	web03.il.net.eu.org.
+auth.hub	IN	CNAME	web03.il.net.eu.org.
+*.pages	IN	CNAME	web03.il.net.eu.org.
 _acme-challenge.pages	IN	CNAME	pages.ilearned.eu.acme.ramle.be.
