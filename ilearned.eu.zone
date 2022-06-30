@@ -37,6 +37,7 @@ status	IN	CNAME	web02.il.net.eu.org.
 trad    IN  CNAME   web03.il.net.eu.org.
 
 ; Association
+asso    IN  CNAME   web04.il.net.eu.org.
 bot.asso	IN	CNAME	web03.il.net.eu.org.
 editor.bot.asso	IN	CNAME	web03.il.net.eu.org.
 db.asso	IN	CNAME	web03.il.net.eu.org.
