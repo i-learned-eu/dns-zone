@@ -1,0 +1,52 @@
+$ORIGIN ilearned.eu.
+$TTL    3600
+
+; SOA
+@   IN  SOA ns1.eban.eu.org. contact.ilearned.eu. 2 21600 3600 604800 86400
+
+; NS
+@   IN  NS  ns.ramle.be.
+@   IN  NS  ns1.eban.eu.org.
+@   IN  NS  ns1.immae.eu.
+@   IN  NS  caligula.ns.bb0.nl.
+@   IN  NS  tiberius.ns.bb0.nl.
+
+; Mail
+@   IN  MX  0 mxsrv02-par.mail.bb0.nl.
+@   IN  TXT "v=spf1 mx -all"
+@   IN  TXT "google-site-verification=TAWKDV5K61GAyaiB_QghPdiOTIBKrVfgWKvrqAT6SaA"
+_dmarc  IN  TXT "v=DMARC1; p=none"
+dkim._domainkey IN  TXT "v=DKIM1"
+autodiscover	IN	CNAME	mxsrv02-par.mail.bb0.nl.ilearned.eu.
+
+; Security
+@   IN  CAA 0 issue "letsencrypt.org"
+_443._tcp   IN  TLSA    3 1 1 405FD3AC07DC7D4C0789BBC2EA6BA75A001AF8F35AA52D97F30AA6FBEAB29653
+_443._udp   IN  TLSA    3 1 1 405FD3AC07DC7D4C0789BBC2EA6BA75A001AF8F35AA52D97F30AA6FBEAB29653
+
+; Other resources
+@   IN  A   89.234.156.60
+@   IN  AAAA    2a03:7220:8083:3c00::1
+analytics	IN	CNAME	ilearned.eu.
+blog.	IN	CNAME	ilearned.eu.
+cdn IN	CNAME	ilearned.eu.
+commento	IN	CNAME	ilearned.eu.
+discord	IN	CNAME	ilearned.eu.
+en	IN	CNAME	ilearned.eu.
+status	IN	CNAME	vm02.eban.eu.org.
+
+; Association
+bot.asso	IN	CNAME	web.ramle.be.
+editor.bot.asso	IN	CNAME	web.ramle.be.
+db.asso	IN	CNAME	web.ramle.be.
+pass.	IN	CNAME	web.ramle.be.
+wiki.	IN	CNAME	web.ramle.be.
+
+; Git
+git	IN	CNAME	web.ramle.be.
+gitea	IN	CNAME	web.ramle.be.
+gitlab	IN	CNAME	web.ramle.be.
+hub	IN	CNAME	web.ramle.be.
+auth.hub	IN	CNAME	web.ramle.be.
+*.pages	IN	CNAME	web.ramle.be.
+_acme-challenge.pages	IN	CNAME	pages.ilearned.eu.acme.ramle.be.
