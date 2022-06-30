@@ -1,0 +1,25 @@
+$ORIGIN il.net.eu.org.
+$TTL    1800
+
+; SOA
+@  IN	SOA	ns1.eban.eu.org. contact.ilearned.eu. 1 21600 3600 604800 86400
+
+; NS
+@  IN	NS	ns.ramle.be.
+@  IN	NS	ns1.eban.eu.org.
+
+; Web
+web01	IN	CNAME	eban.eu.org.
+txt.web01	IN	TXT	"Owner: Eban"
+web02	IN	CNAME	vm02.eban.eu.org.
+txt.web02	IN	TXT	"Owner: Eban"
+web03	IN	CNAME	web.ramle.be.
+txt.web03	IN	TXT	"Owner: Elmar"
+
+; Labs
+labs01	IN	A	129.151.246.78
+txt.labs01	IN	TXT	"Owner: llaq"
+labs02	IN	A	129.151.230.87
+txt.labs02	IN	TXT	"Owner: llaq"
+labs03	IN	A	129.151.232.167
+txt.labs03	IN	TXT	"Owner: Eban"
