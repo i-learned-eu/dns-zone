@@ -34,6 +34,7 @@ commento	IN	CNAME	web01.il.net.eu.org.
 discord	IN	CNAME	web01.il.net.eu.org.
 en	IN	CNAME	web01.il.net.eu.org.
 status	IN	CNAME	web02.il.net.eu.org.
+trad    IN  CNAME   web03.il.net.eu.org.
 
 ; Association
 bot.asso	IN	CNAME	web03.il.net.eu.org.
