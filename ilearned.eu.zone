@@ -12,12 +12,12 @@ $TTL    3600
 @   IN  NS  tiberius.ns.bb0.nl.
 
 ; Mail
-@   IN  MX  0 mxsrv02-par.mail.bb0.nl.
+@   IN  MX  0 mail.gnous.eu.
 @   IN  TXT "v=spf1 mx -all"
 @   IN  TXT "google-site-verification=TAWKDV5K61GAyaiB_QghPdiOTIBKrVfgWKvrqAT6SaA"
 _dmarc  IN  TXT "v=DMARC1; p=none"
 dkim._domainkey IN  TXT "v=DKIM1"
-autodiscover	IN	CNAME	mxsrv02-par.mail.bb0.nl.ilearned.eu.
+autodiscover	IN	CNAME	mail.gnous.eu.
 
 ; Security
 @   IN  CAA 0 issue "letsencrypt.org"
