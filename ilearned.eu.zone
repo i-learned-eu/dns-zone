@@ -51,5 +51,5 @@ gitea	IN	CNAME	web03.il.net.eu.org.
 gitlab	IN	CNAME	web03.il.net.eu.org.
 hub	IN	CNAME	web03.il.net.eu.org.
 auth.hub	IN	CNAME	web03.il.net.eu.org.
-*.pages	IN	CNAME	web03.il.net.eu.org.
-_acme-challenge.pages	IN	CNAME	pages.ilearned.eu.acme.ramle.be.
+pages	IN	A	51.210.84.109
+pages   IN  AAAA    2a0e:fd45:2a20:9::236
