@@ -36,6 +36,7 @@ en	IN	CNAME	web01.il.net.eu.org.
 status	IN	CNAME	web02.il.net.eu.org.
 trad    IN  CNAME   web03.il.net.eu.org.
 cb      IN  CNAME   web01.il.net.eu.org.
+aleph   IN  CNAME   web03.il.net.eu.org.
 
 ; Association
 asso    IN  CNAME   web04.il.net.eu.org.
