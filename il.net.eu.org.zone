@@ -12,6 +12,7 @@ $TTL    3600
 web01	IN	CNAME	eban.eu.org.
 txt.web01	IN	TXT	"Owner: Eban"
 web02	IN	CNAME	vm02.eban.eu.org.
+web02 IN SSHFP 4 2 dac6fd73f2fee82d50ae993b906557603f5da177955b6527d7248a585552b075
 txt.web02	IN	TXT	"Owner: Eban"
 web03	IN	CNAME	web.ramle.be.
 web03 IN SSHFP 1 2 33db17fa6283a6361872e96a10e91545a055d307f35c2db4e34f08461f97f74e
