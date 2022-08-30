@@ -11,6 +11,20 @@ $TTL    3600
 @   IN  NS  caligula.ns.bb0.nl.
 @   IN  NS  tiberius.ns.bb0.nl.
 
+; Infra
+web01	IN	CNAME	eban.eu.org.
+txt.web01	IN	TXT	"Owner: Eban"
+web02	IN	CNAME	vm02.eban.eu.org.
+web02 IN SSHFP 4 2 dac6fd73f2fee82d50ae993b906557603f5da177955b6527d7248a585552b075
+txt.web02	IN	TXT	"Owner: Eban"
+web03	IN	CNAME	web.ramle.be.
+web03 IN SSHFP 1 2 33db17fa6283a6361872e96a10e91545a055d307f35c2db4e34f08461f97f74e
+web03 IN SSHFP 4 2 a60645c95f2ade4408b02e18965bb0c2cff71b6921b5bc9ee29185b3205036b9
+txt.web03	IN	TXT	"Owner: Elmar"
+web04   IN  CNAME   leaf.cant.at.
+txt.web04   IN  TXT   "Owner: Tag"
+
+
 ; Mail
 @   IN  MX  0 mail.gnous.eu.
 @   IN  TXT "v=spf1 mx -all"
@@ -29,33 +43,33 @@ _443._udp.blog   IN  TLSA    3 1 1 660f7009a2cb72cf0f990fe4d48461cebaa0d75e3c7c7
 ; Other resources
 @   IN  A   89.234.156.60
 @   IN  AAAA    2a03:7220:8083:3c00::1
-analytics	IN	CNAME	web01.il.net.eu.org.
-blog	IN	CNAME	web01.il.net.eu.org.
-cdn IN	CNAME	web01.il.net.eu.org.
-commento	IN	CNAME	web01.il.net.eu.org.
-discord	IN	CNAME	web01.il.net.eu.org.
-en	IN	CNAME	web01.il.net.eu.org.
-status	IN	CNAME	web02.il.net.eu.org.
-trad    IN  CNAME   web03.il.net.eu.org.
-cb      IN  CNAME   web01.il.net.eu.org.
-aleph   IN  CNAME   web03.il.net.eu.org.
+analytics	IN	CNAME	web01
+blog	IN	CNAME	web01
+cdn IN	CNAME	web01
+commento	IN	CNAME	web01
+discord	IN	CNAME	web01
+en	IN	CNAME	web01
+status	IN	CNAME	web02
+trad    IN  CNAME   web03
+cb      IN  CNAME   web01
+aleph   IN  CNAME   web03
 
 ; Association
-asso    IN  CNAME   web04.il.net.eu.org.
-don     IN  CNAME   web04.il.net.eu.org.
-bot.asso	IN	CNAME	web03.il.net.eu.org.
-editor.bot.asso	IN	CNAME	web03.il.net.eu.org.
-db.asso	IN	CNAME	web03.il.net.eu.org.
-pass	IN	CNAME	web03.il.net.eu.org.
+asso    IN  CNAME   web04
+don     IN  CNAME   web04
+bot.asso	IN	CNAME	web03
+editor.bot.asso	IN	CNAME	web03
+db.asso	IN	CNAME	web03
+pass	IN	CNAME	web03
 wiki	IN	CNAME	i-learned.pages
 _gitlab-pages-verification-code.wiki IN TXT gitlab-pages-verification-code=93350a039f9435c806e349f5b3f60f15
 
 ; Git
-git	IN	CNAME	web03.il.net.eu.org.
-gitea	IN	CNAME	web03.il.net.eu.org.
-gitlab	IN	CNAME	web03.il.net.eu.org.
-hub	IN	CNAME	web03.il.net.eu.org.
-auth.hub	IN	CNAME	web03.il.net.eu.org.
+git	IN	CNAME	web03
+gitea	IN	CNAME	web03
+gitlab	IN	CNAME	web03
+hub	IN	CNAME	web03
+auth.hub	IN	CNAME	web03
 pages	IN	A	51.210.84.109
 pages   IN  AAAA    2a0e:fd45:2a20:9::236
 *.pages IN  CNAME   pages
