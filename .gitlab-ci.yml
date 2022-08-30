@@ -4,8 +4,16 @@ default:
         - AMD64
 
 stages:
+    - test
     - prod-deploy
 
+test-job:
+    stage: test
+    script:
+        - apt-get install -y bind9utils
+        - named-checkzone ilearned.eu ilearned.eu.zone
+        - named-checkzone ilearned.eu.org ilearned.eu.org.zone
+        - named-checkzone il.net.eu.org il.net.eu.org.zone
 prod-deploy-job:
     stage: prod-deploy
     script:
