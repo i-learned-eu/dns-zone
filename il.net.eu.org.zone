@@ -7,6 +7,9 @@ $TTL    3600
 ; NS
 @  IN	NS	ns.ramle.be.
 @  IN	NS	ns1.eban.eu.org.
+@   IN  NS  ns1.immae.eu.
+@   IN  NS  caligula.ns.bb0.nl.
+@   IN  NS  tiberius.ns.bb0.nl.
 
 ; Web
 ; eban.eu.org
