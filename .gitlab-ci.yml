@@ -4,9 +4,9 @@ default:
         - AMD64
     before_script:
         - export EPOCH_TIME=$(date +%s)
-        - sed -i s/DYNAMIC_SOA/$EPOCH_TIME ilearned.eu.zone
-        - sed -i s/DYNAMIC_SOA/$EPOCH_TIME ilearned.eu.org.zone
-        - sed -i s/DYNAMIC_SOA/$EPOCH_TIME il.net.eu.org.zone
+        - sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ ilearned.eu.zone
+        - sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ ilearned.eu.org.zone
+        - sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ il.net.eu.org.zone
 stages:
     - test
     - prod-deploy
