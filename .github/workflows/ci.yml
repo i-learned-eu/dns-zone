@@ -10,6 +10,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y bind9utils
+          export EPOCH_TIME=$(date +%s)
           sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ il.net.eu.org.zone
           sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ ilearned.eu.org.zone
           sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ ilearned.eu.zone
