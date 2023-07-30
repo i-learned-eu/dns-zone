@@ -1,0 +1,44 @@
+name: Copy zone
+
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Requirement
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bind9utils
+      - name: Lint
+        run: |
+          named-checkzone ilearned.eu ilearned.eu.zone
+          named-checkzone ilearned.eu.org ilearned.eu.org.zone
+          named-checkzone il.net.eu.org il.net.eu.org.zone
+  deploy-ilearned-eu:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Requirement
+        run: |
+          echo "${{secrets.DEPLOY_KEY}}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+          eval $(ssh-agent -s)
+          export EPOCH_TIME=$(date +%s)
+      - name: Copy zone
+        run: |
+          if [[ $(git diff HEAD~1 HEAD -- il.net.eu.org | wc -l) = 0 ]]; then
+            sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ il.net.eu.org.zone
+            rsync -az --delete -e "ssh -i ~/.ssh/id_ed25519" il.net.eu.org.zone deploy@vm01.eban.eu.org:/var/lib/knot
+          fi
+          if [[ $(git diff HEAD~1 HEAD -- ilearned.eu.org | wc -l) = 0 ]]; then
+            sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ ilearned.eu.org.zone
+            rsync -az --delete -e "ssh -i ~/.ssh/id_ed25519" ilearned.eu.org.zone deploy@vm01.eban.eu.org:/var/lib/knot
+          fi
+          if [[ $(git diff HEAD~1 HEAD -- ilearned.eu | wc -l) = 0 ]]; then
+            sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ ilearned.eu.zone
+            rsync -az --delete -e "ssh -i ~/.ssh/id_ed25519" ilearned.eu.zone deploy@vm01.eban.eu.org:/var/lib/knot
+          fi
+          ssh -i ~/.ssh/id_ed25519 deploy@vm01.eban.eu.org sudo /bin/systemctl restart knot
