@@ -33,16 +33,16 @@ jobs:
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ${HOME}/.ssh/config
           eval $(ssh-agent -s)
           export EPOCH_TIME=$(date +%s)
-          if [[ $(git diff HEAD~1 HEAD -- il.net.eu.org | wc -l) = 0 ]]; then
+          if [[ $(git diff HEAD~1 HEAD -- il.net.eu.org | wc -l) > 0 ]]; then
             sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ il.net.eu.org.zone
-            rsync -az --delete -e "ssh -i $HOME/.ssh/id_ed25519" il.net.eu.org.zone deploy@vm01.eban.eu.org:/var/lib/knot
+            scp -i ${HOME}/.ssh/id_ed25519 il.net.eu.org.zone deploy@vm01.eban.eu.org:/var/lib/knot/
           fi
-          if [[ $(git diff HEAD~1 HEAD -- ilearned.eu.org | wc -l) = 0 ]]; then
+          if [[ $(git diff HEAD~1 HEAD -- ilearned.eu.org | wc -l) > 0 ]]; then
             sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ ilearned.eu.org.zone
-            rsync -az --delete -e "ssh -i ${HOME}/.ssh/id_ed25519" ilearned.eu.org.zone deploy@vm01.eban.eu.org:/var/lib/knot
+            scp -i ${HOME}/.ssh/id_ed25519 ilearned.eu.org.zone deploy@vm01.eban.eu.org:/var/lib/knot
           fi
-          if [[ $(git diff HEAD~1 HEAD -- ilearned.eu | wc -l) = 0 ]]; then
+          if [[ $(git diff HEAD~1 HEAD -- ilearned.eu | wc -l) > 0 ]]; then
             sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ ilearned.eu.zone
-            rsync -az --delete -e "ssh -i ${HOME}/.ssh/id_ed25519" ilearned.eu.zone deploy@vm01.eban.eu.org:/var/lib/knot
+            scp -i ${HOME}/.ssh/id_ed25519 ilearned.eu.zone deploy@vm01.eban.eu.org:/var/lib/knot
           fi
           ssh -i ${HOME}/.ssh/id_ed25519 deploy@vm01.eban.eu.org sudo /bin/systemctl restart knot
