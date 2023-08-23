@@ -1,0 +1,39 @@
+name: Copy zone
+
+on:
+  push:
+    paths:
+      - "ilearned.eu.zone"
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Requirement
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bind9utils
+          export EPOCH_TIME=$(date +%s)
+          sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ ilearned.eu.zone
+
+      - name: Lint
+        run: |
+          named-checkzone ilearned.eu ilearned.eu.zone
+  deploy-ilearned-eu:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+      - name: Copy zone
+        run: |
+          mkdir ${HOME}/.ssh
+          echo "${{secrets.DEPLOY_KEY}}" > ${HOME}/.ssh/id_ed25519
+          chmod 600 ${HOME}/.ssh/id_ed25519
+          echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ${HOME}/.ssh/config
+          eval $(ssh-agent -s)
+          export EPOCH_TIME=$(date +%s)
+          sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ ilearned.eu.zone
+          scp -i ${HOME}/.ssh/id_ed25519 ilearned.eu.zone deploy@vm01.eban.eu.org:/var/lib/knot
+          ssh -i ${HOME}/.ssh/id_ed25519 deploy@vm01.eban.eu.org sudo /bin/systemctl restart knot

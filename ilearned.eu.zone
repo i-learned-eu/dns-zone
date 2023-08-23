@@ -2,14 +2,14 @@ $ORIGIN ilearned.eu.
 $TTL    3600
 
 ; SOA
-@   IN  SOA ns1.eban.eu.org. contact.ilearned.eu. DYNAMIC_SOA 21600 3600 604800 86400
+@   7200 IN  SOA ns1.eban.eu.org. contact.ilearned.eu. DYNAMIC_SOA 21600 3600 604800 86400
 
 ; NS
-@   IN  NS  ns.ramle.be.
-@   IN  NS  ns1.eban.eu.org.
-@   IN  NS  ns1.immae.eu.
-@   IN  NS  caligula.ns.bb0.nl.
-@   IN  NS  tiberius.ns.bb0.nl.
+@   7200 IN  NS  ns.ramle.be.
+@   7200 IN  NS  ns1.eban.eu.org.
+@   7200 IN  NS  ns1.immae.eu.
+@   7200 IN  NS  caligula.ns.bb0.nl.
+@   7200 IN  NS  tiberius.ns.bb0.nl.
 
 ; Mail
 @   IN  MX  0 mail.gnous.eu.
@@ -30,15 +30,14 @@ _443._udp.blog   IN  TLSA    3 1 1 660f7009a2cb72cf0f990fe4d48461cebaa0d75e3c7c7
 @   IN  A   89.234.156.60
 @   IN  AAAA    2a03:7220:8083:3c00::1
 analytics	IN	CNAME	web01.il.net.eu.org.
-blog	IN	CNAME	web01.il.net.eu.org.
-cdn IN	CNAME	web01.il.net.eu.org.
-commento	IN	CNAME	web01.il.net.eu.org.
-discord	IN	CNAME	web01.il.net.eu.org.
-en	IN	CNAME	web01.il.net.eu.org.
-status	IN	CNAME	web02.il.net.eu.org.
-cb      IN  CNAME   web01.il.net.eu.org.
+blog     IN CNAME	web01.il.net.eu.org.
+cdn      IN CNAME	web01.il.net.eu.org.
+commento IN CNAME	web01.il.net.eu.org.
+discord  IN CNAME	web01.il.net.eu.org.
+en       IN CNAME	web01.il.net.eu.org.
+status	 IN CNAME	web02.il.net.eu.org.
+cb       IN CNAME   web01.il.net.eu.org.
 
 ; Association
 asso    IN  CNAME   web04.il.net.eu.org.
 don     IN  CNAME   web04.il.net.eu.org.
-

@@ -2,18 +2,19 @@ $ORIGIN ilearned.eu.org.
 $TTL    3600
 
 ; SOA
-@  IN	SOA	ns1.eban.eu.org. contact.ilearned.eu. DYNAMIC_SOA 21600 3600 604800 86400
+@  7200 IN	SOA	ns1.eban.eu.org. contact.ilearned.eu. DYNAMIC_SOA 21600 3600 604800 86400
 
 ; NS
-@   IN  NS  ns1.eban.eu.org.
-@   IN  NS  ns1.immae.eu.
-@   IN  NS  caligula.ns.bb0.nl.
-@   IN  NS  tiberius.ns.bb0.nl.
+@   7200 IN  NS  ns1.eban.eu.org.
+@   7200 IN  NS  ns1.immae.eu.
+@   7200 IN  NS  caligula.ns.bb0.nl.
+@   7200 IN  NS  tiberius.ns.bb0.nl.
 
 ; Security
-@   IN  CAA 0 issue "letsencrypt.org"
+@   7200 IN  CAA 0 issue "letsencrypt.org"
 
 ; Other resources
 @   IN	A	89.234.156.60
 @   IN	AAAA	2a03:7220:8083:3c00::1
 en  IN	CNAME	ilearned.eu.
+
