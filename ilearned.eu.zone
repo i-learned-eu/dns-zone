@@ -36,26 +36,9 @@ commento	IN	CNAME	web01.il.net.eu.org.
 discord	IN	CNAME	web01.il.net.eu.org.
 en	IN	CNAME	web01.il.net.eu.org.
 status	IN	CNAME	web02.il.net.eu.org.
-trad    IN  CNAME   web03.il.net.eu.org.
 cb      IN  CNAME   web01.il.net.eu.org.
-aleph   IN  CNAME   web03.il.net.eu.org.
 
 ; Association
 asso    IN  CNAME   web04.il.net.eu.org.
 don     IN  CNAME   web04.il.net.eu.org.
-bot.asso	IN	CNAME	web03.il.net.eu.org.
-editor.bot.asso	IN	CNAME	web03.il.net.eu.org.
-db.asso	IN	CNAME	web03.il.net.eu.org.
-pass	IN	CNAME	web03.il.net.eu.org.
-wiki	IN	CNAME	i-learned.pages
-_gitlab-pages-verification-code.wiki IN TXT gitlab-pages-verification-code=93350a039f9435c806e349f5b3f60f15
 
-; Git
-git	IN	CNAME	web03.il.net.eu.org.
-gitea	IN	CNAME	web03.il.net.eu.org.
-gitlab	IN	CNAME	web03.il.net.eu.org.
-hub	IN	CNAME	web03.il.net.eu.org.
-auth.hub	IN	CNAME	web03.il.net.eu.org.
-pages	IN	A	51.210.84.109
-pages   IN  AAAA    2a0e:fd45:2a20:9::236
-*.pages IN  CNAME   pages
