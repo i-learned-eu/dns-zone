@@ -17,7 +17,7 @@ jobs:
           sed -i s/DYNAMIC_SOA/$EPOCH_TIME/ il.net.eu.org.zone
       - name: Lint
         run: |
-          named-checkzone ilearned.eu il.net.eu.org.zone
+          named-checkzone il.net.eu.org il.net.eu.org.zone
   deploy-il-net-eu-org:
     needs: lint
     runs-on: ubuntu-latest
